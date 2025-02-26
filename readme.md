@@ -10,7 +10,7 @@ Seguir os passos abaixo para iniciar a API.
 
 - Acessar o diretório `api`
 - Executar o comando `npm install`
-- Executar o comando `ndoe server.js`
+- Executar o comando `node server.js`
 
 ## Frontend
 
