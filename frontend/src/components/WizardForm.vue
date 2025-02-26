@@ -93,6 +93,8 @@ const nextStep = () => {
 };
 
 const prevStep = () => {
+  isInvalidForm.value = false;
+
   if (currentStep.value > 0) {
     currentStep.value--;
   }
