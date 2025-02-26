@@ -14,7 +14,7 @@ Seguir os passos abaixo para iniciar a API.
 
 ## Frontend
 
-Seguir os passos abaixo para iniciar a API.
+Seguir os passos abaixo para iniciar a aplicação.
 
 - Acessar o diretório `frontend`
 - Executar o comando `npm install`
