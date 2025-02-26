@@ -1,0 +1,100 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #000000;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+input[type='text'],
+input[type='date'],
+input[type='tel'],
+input[type='password'] {
+  width: 97%;
+  padding: 12px 8px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+
+  &:focus {
+    border-color: #f7931e;
+    outline: none;
+  }
+}
+
+.hasError {
+  label {
+    color: #f00;
+  }
+
+  input[type='text'],
+  input[type='date'],
+  input[type='tel'],
+  input[type='password'] {
+    border-color: #f00;
+  }
+}
+
+.error-required {
+  color: #f00;
+}
+
+.input-error-message {
+  position: absolute;
+  color: #f00;
+  font-size: 12px;
+  left: 8px;
+  bottom: -20px;
+}
+
+.card-error-message {
+  color: #ffffff;
+  background-color: #f00;
+  padding: 10px;
+  border-radius: 4px;
+  border: 2px solid rgb(217, 0, 0);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.card-success-message {
+  color: #ffffff;
+  background-color: #28a745;
+  font-weight: bold;
+
+  padding: 10px;
+  border-radius: 4px;
+  border: 2px solid #1e8d38;
+  font-size: 14px;
+}
