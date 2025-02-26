@@ -4,6 +4,7 @@
 
     <div class="form-group">
       <label>Razão Social</label>
+
       <input
         type="text"
         v-model="modelValue.razaoSocial" />
@@ -13,6 +14,7 @@
       class="form-group"
       :class="{ hasError: cnpjError }">
       <label>CNPJ</label>
+
       <input
         type="text"
         v-model="modelValue.cnpj"
@@ -21,13 +23,14 @@
 
       <span
         v-if="cnpjError"
-        class="input-error-message"
-        >{{ cnpjError }}</span
-      >
+        class="input-error-message">
+        {{ cnpjError }}
+      </span>
     </div>
 
     <div class="form-group">
       <label>Data de abertura</label>
+
       <input
         type="date"
         v-model="modelValue.dataAbertura" />
@@ -35,6 +38,7 @@
 
     <div class="form-group">
       <label>Telefone</label>
+
       <input
         type="tel"
         v-model="modelValue.telefone"
@@ -55,10 +59,6 @@ const onlyNumber = (event, inputName) => {
 };
 
 const validateCnpj = (value) => {
-  if (!isCnpjValid(value)) {
-    cnpjError.value = 'CNPJ inválido';
-  } else {
-    cnpjError.value = null;
-  }
+  cnpjError.value = !isCnpjValid(value) ? 'CNPJ inválido' : null;
 };
 </script>

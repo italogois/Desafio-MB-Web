@@ -6,6 +6,7 @@
       class="form-group"
       :class="{ hasError: emailError }">
       <label>Endereço de e-mail</label>
+
       <input
         type="text"
         v-model="modelValue.email"
@@ -54,11 +55,7 @@ defineProps(['modelValue', 'showTitle', 'stepOneTipoPessoa']);
 const emailError = ref(null);
 
 const validateEmail = (value) => {
-  if (!isValidEmail(value)) {
-    emailError.value = 'E-mail inválido';
-  } else {
-    emailError.value = null;
-  }
+  emailError.value = !isValidEmail(value) ? 'E-mail inválido' : null;
 };
 </script>
 

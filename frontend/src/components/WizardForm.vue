@@ -1,8 +1,8 @@
 <template>
   <div class="wizard-container">
-    <p class="step-info">
+    <div class="step-info">
       Etapa <span class="current-step">{{ currentStep + 1 }}</span> de <span class="total-steps">{{ totalSteps }}</span>
-    </p>
+    </div>
 
     <component
       :is="getCurrentStepComponent"
@@ -18,12 +18,14 @@
         class="btn btn-outline">
         Voltar
       </button>
+
       <button
         @click="nextStep"
         v-if="currentStep < steps.length - 1"
         class="btn btn-primary">
         Próximo
       </button>
+
       <button
         @click="submitForm"
         v-if="currentStep === steps.length - 1"
@@ -37,6 +39,7 @@
       class="card-error-message">
       {{ apiErrorMessage || 'Todos os campos são obrigatórios' }}
     </div>
+
     <div
       v-if="apiSuccessMessage"
       class="card-success-message">
@@ -55,10 +58,8 @@ import StepFourForm from './StepFourForm.vue';
 import { register } from '../service/registerService';
 
 const steps = [StepOneForm, StepTwoPFForm, StepThreeForm, StepFourForm];
-
 const apiErrorMessage = ref(null);
 const apiSuccessMessage = ref(null);
-
 const currentStep = ref(0);
 const isInvalidForm = ref(null);
 const formWizardData = ref({
@@ -166,13 +167,12 @@ const isValidPayload = () => {
       }
     }
   }
+
   return true;
 };
 
 const submitForm = async () => {
-  const isValid = isValidPayload();
-
-  if (!isValid) {
+  if (!isValidPayload()) {
     isInvalidForm.value = true;
     return;
   }
