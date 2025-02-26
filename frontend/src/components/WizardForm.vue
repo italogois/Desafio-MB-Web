@@ -146,17 +146,18 @@ const resetForm = () => {
 };
 
 const cleanValueToSend = () => {
-  const valueForm = formWizardData.value;
+  const valueFormPayload = {
+    stepOneForm: formWizardData.value.stepOneForm,
+    stepThreeForm: formWizardData.value.stepThreeForm,
+  };
 
-  delete valueForm.stepFourForm;
-
-  if (valueForm.stepOneForm.tipoPessoa === 'pessoaFisica') {
-    delete valueForm.stepTwoPJForm;
+  if (formWizardData.value.stepOneForm.tipoPessoa === 'pessoaFisica') {
+    valueFormPayload.stepTwoPFForm = formWizardData.value.stepTwoPFForm;
   } else {
-    delete valueForm.stepTwoPFForm;
+    valueFormPayload.stepTwoPJForm = formWizardData.value.stepTwoPJForm;
   }
 
-  return valueForm;
+  return valueFormPayload;
 };
 
 const isValidPayload = () => {
